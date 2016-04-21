@@ -61,22 +61,27 @@ void imprimir(nodo*lista){
 
 
 void espageti(nodo*lista1,nodo*lista2){
-	nodo*tmp1=lista1;
-	nodo*tmp2=lista2;
-	int cont1=0;
-	int cont2=0;
-	while(cont2!=2){
-		tmp2=tmp2->siguiente;
-		cont2++;
-	}
-	tmp1->siguiente=tmp2;
-	tmp1=lista1;
-	tmp2=lista2;
-	printf("%d\n",tmp2->numero);
+	nodo*tmp1=lista1;			//6
+	nodo*tmp2=lista2;			//9	
+	nodo*tmp3=lista1->siguiente;		//1
+	nodo*tmp4=lista2->siguiente->siguiente;	//11
+
+	tmp1->siguiente=tmp4;			//6->11
+	tmp2->siguiente->siguiente=tmp3;	//10->1
+	tmp1=tmp4->siguiente;			//tmp1=12
+	tmp2=tmp3->siguiente;			//tmp2=2
+	tmp3=tmp3->siguiente->siguiente;	//tmp3=3
+	tmp4=tmp4->siguiente->siguiente;	//tmp4=13
+
+	tmp1->siguiente=tmp3;			//12->3			
+	tmp2->siguiente=tmp4;			//2->13
+	tmp1=tmp3->siguiente;			//tmp1=4
+	tmp2=tmp2->siguiente->siguiente;	//tmp2=14
+	tmp3=tmp3->siguiente->siguiente;	//tmp3=8
+	tmp2->siguiente=tmp3;			//14->8
+	tmp1->siguiente=lista2;			//4->9
 	
-		
-
-
+	
 }
 
 
